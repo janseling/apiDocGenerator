@@ -6,7 +6,7 @@ class Parser {
         $comments = $this->getComments($content);
         $doc = [];
         foreach ($comments as $comment) {
-            if (empty($comment)) {
+            if (empty($comment) || preg_match("/\*\ \@api/", $comment) == 0) {
                 continue;
             }
             $doc[] = [
