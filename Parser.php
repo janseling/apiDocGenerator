@@ -30,7 +30,7 @@ class Parser {
         return $doc;
     }
 
-    protected function getCacheDir () {
+    public function getCacheDir () {
         return __DIR__.'/cache';
     }
 
