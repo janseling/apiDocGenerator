@@ -20,3 +20,22 @@
 |@method|是|接口的请求方式|@method POST|
 |@param|否|接口的参数说明，多个参数时需要编写个。格式: @param 字段名 字段类型 [必填/可选] 描述|@param param1 string [必填] 这是一个字段的|
 |@column|否|返回数据的字段说明。格式: @column 字段名 字段说明|@column column1 这是返回的字段|
+
+### 一个完整的注释示例
+
+```
+/**
+ * @api
+ * @desc    测试方法1
+ * @url     api/text1
+ * @method  POST
+ * @param   param1      string  [必填]  akldjlaksjdlsd
+ * @param   param2      string  [必填]  akl djlaksjdlsd
+ * @param   param3      string  [可选]  akld jlaksjdlsd
+ * @param   param4      string  [可选]  akldjlaksjdlsd
+ * @column  field1      slkdjskdjls
+ * @column  field2      slkdjskdjls
+ * @column  field3      slkdjskdjls
+ * @column  field4      slkdjskdjls
+ */
+```
