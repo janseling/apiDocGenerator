@@ -15,6 +15,7 @@
 |注释标识|是否必要|作用描述|例子|
 |--------|--------|--------|----|
 |@api|是|接口标识, 没有此标识的注释无法解析为接口文档||
+|@name|是|接口的名称|@name 测试接口1|
 |@desc|是|接口的功能简短描述|@desc 这是一段描述|
 |@url|是|接口的地址|@url api/text|
 |@method|是|接口的请求方式|@method POST|
@@ -26,9 +27,10 @@
 ```
 /**
  * @api
- * @desc    测试方法1
+ * @name    测试接口1
  * @url     api/text1
  * @method  POST
+ * @desc    这是用来测试接口1的接口，会直接输出无意义的数据
  * @param   param1      string  [必填]  akldjlaksjdlsd
  * @param   param2      string  [必填]  akl djlaksjdlsd
  * @param   param3      string  [可选]  akld jlaksjdlsd

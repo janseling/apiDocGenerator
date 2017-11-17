@@ -13,6 +13,7 @@ class Parser {
                 'params' => $this->getParams($comment),
                 'columns' => $this->getColumns($comment),
                 'url' => $this->getField($comment, 'url'),
+                'name' => $this->getField($comment, 'name'),
                 'desc' => $this->getField($comment, 'desc'),
                 'method' => $this->getField($comment, 'method'),
             ];

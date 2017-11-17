@@ -25,10 +25,12 @@ $parser = new Parser();
     ?>
         <li>
         <div class="link">
-            <i class="fa fa-globe"></i><?= trim($doc['url']) ?><i class="fa fa-chevron-down"></i>
+            <i class="fa fa-globe"></i><?= trim($doc['name']) ?>&nbsp;&nbsp;(<?= trim($doc['url']) ?>)<i class="fa fa-chevron-down"></i>
         </div>
         <div class="submenu">
             <p>
+                <label>请求地址</label> : <?= $doc['url'] ?>
+                </br>
                 <label>请求方式</label> : <?= $doc['method'] ?>
                 </br>
                 <label>接口说明</label> : <?= $doc['desc'] ?>
