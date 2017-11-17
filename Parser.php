@@ -66,7 +66,7 @@ class Parser {
     public function getComments ($str) {
         $matches = [];
         preg_match_all('/\/\*([^\*^\/]*|[\*^\/*]*|[^\**\/]*)*\*\//', $str, $matches);
-        return $matches[0] ?: '';
+        return $matches[0] ?: [];
     }
 
     public function getField ($str, $field) {
@@ -78,7 +78,7 @@ class Parser {
     public function getFields ($str, $field) {
         $matches = [];
         preg_match_all("/\*\ \@{$field}\ *(.*)/", $str, $matches);
-        return $matches[1] ?: '';
+        return $matches[1] ?: [];
     }
 
     public function getParams ($str) {
