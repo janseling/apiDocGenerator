@@ -1,6 +1,15 @@
 <?php
 class Parser {
 
+    public function parse ($file) {
+        if ($this->checkCache($file)) {
+            return $this->cacheRead($file);
+        }
+        $doc = $this->fromFile($file);
+        $this->cacheSave($file, $doc);
+        return $doc;
+    }
+
     public function fromFile ($file) {
         $content = file_get_contents($file);
         $comments = $this->getComments($content);
@@ -19,6 +28,36 @@ class Parser {
             ];
         }
         return $doc;
+    }
+
+    protected function getCacheDir () {
+        return __DIR__.'/cache';
+    }
+
+    protected function getCachePath ($file) {
+        $log = exec('cd '.dirname(__DIR__).' && git log -1 --oneline '.$file);
+        $commitId = explode(' ', $log)[0];
+        return $this->getCacheDir().'/'.$commitId.'-'.md5($file).'.json';
+    }
+
+    protected function checkCache ($file) {
+        $path = $this->getCachePath($file);
+        return file_exists($path);
+    }
+
+    protected function cacheRead ($file) {
+        $path = $this->getCachePath($file);
+        $doc = json_decode(file_get_contents($path), true);
+        return $doc;
+    }
+
+    protected function cacheSave ($file, $data) {
+        $cacheDir = $this->getCacheDir();
+        if (!file_exists($cacheDir)) {
+            mkdir($cacheDir);
+        }
+        $path = $this->getCachePath($file);
+        file_put_contents($path, json_encode($data));
     }
 
     public function getComments ($str) {

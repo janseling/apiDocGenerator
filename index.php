@@ -20,7 +20,7 @@ $parser = new Parser();
     <ul id="accordion" class="accordion">
     <?php
     foreach ($config['php_files'] as $file) {
-        $docs = $parser->fromFile($file);
+        $docs = $parser->parse($file);
         foreach ($docs as $doc) {
     ?>
         <li>
