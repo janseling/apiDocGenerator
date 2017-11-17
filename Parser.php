@@ -38,9 +38,7 @@ class Parser {
         if (strpos($file, '..') === 0) {
             $file = dirname(__DIR__).substr($file, 2);
         }
-        echo('cd '.dirname(__DIR__).' && git log -1 --oneline '.$file);
         $log = exec('cd '.dirname(__DIR__).' && git log -1 --oneline '.$file);
-        var_dump($log);
         $commitId = explode(' ', $log)[0];
         return $this->getCacheDir().'/'.$commitId.'-'.md5($file).'.json';
     }
