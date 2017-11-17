@@ -35,8 +35,8 @@ class Parser {
     }
 
     protected function getCachePath ($file) {
-        if (strpos('../', $file) === 0) {
-            $file = __DIR__.'/'.$file;
+        if (strpos($file, '..') === 0) {
+            $file = dirname(__DIR__).substr($file, 2);
         }
         echo('cd '.dirname(__DIR__).' && git log -1 --oneline '.$file);
         $log = exec('cd '.dirname(__DIR__).' && git log -1 --oneline '.$file);
