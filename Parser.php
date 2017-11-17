@@ -35,7 +35,10 @@ class Parser {
     }
 
     protected function getCachePath ($file) {
-        $log = exec('cd '.__DIR__.' && git log -1 --oneline '.$file);
+        if (strpos('../', $file) === 0) {
+            $file = __DIR__.'/'.$file;
+        }
+        $log = exec('cd '.dirname(__DIR__).' && git log -1 --oneline '.$file);
         var_dump($log);
         $commitId = explode(' ', $log)[0];
         return $this->getCacheDir().'/'.$commitId.'-'.md5($file).'.json';
