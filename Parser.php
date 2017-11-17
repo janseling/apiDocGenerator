@@ -38,6 +38,7 @@ class Parser {
         if (strpos('../', $file) === 0) {
             $file = __DIR__.'/'.$file;
         }
+        echo('cd '.dirname(__DIR__).' && git log -1 --oneline '.$file);
         $log = exec('cd '.dirname(__DIR__).' && git log -1 --oneline '.$file);
         var_dump($log);
         $commitId = explode(' ', $log)[0];
