@@ -66,19 +66,19 @@ class Parser {
     public function getComments ($str) {
         $matches = [];
         preg_match_all('/\/\*([^\*^\/]*|[\*^\/*]*|[^\**\/]*)*\*\//', $str, $matches);
-        return $matches[0];
+        return $matches[0] ?: '';
     }
 
     public function getField ($str, $field) {
         $matches = [];
         preg_match("/\*\ \@{$field}\ (.*)/", $str, $matches);
-        return $matches[1];
+        return $matches[1] ?: '';
     }
 
     public function getFields ($str, $field) {
         $matches = [];
         preg_match_all("/\*\ \@{$field}\ *(.*)/", $str, $matches);
-        return $matches[1];
+        return $matches[1] ?: '';
     }
 
     public function getParams ($str) {
@@ -87,9 +87,9 @@ class Parser {
         foreach ($matches as $match) {
             $f = array_merge(array_filter(explode(' ', $match)));
             $params[] = [
-                'name' => $f[0],
-                'class' => $f[1],
-                'needle' => $f[2],
+                'name' => $f[0] ?: '',
+                'class' => $f[1] ?: '',
+                'needle' => $f[2] ?: '',
                 'desc' => join(' ', array_slice($f, 3)),
             ];
         }
@@ -102,7 +102,7 @@ class Parser {
         foreach ($matches as $match) {
             $f = array_merge(array_filter(explode(' ', $match)));
             $rets[] = [
-                'name' => $f[0],
+                'name' => $f[0] ?: '',
                 'desc' => join(' ', array_slice($f, 1)),
             ];
         }
