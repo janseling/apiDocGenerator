@@ -16,7 +16,7 @@ $parser = new Parser();
 </head>
 
 <body>
-    <a id="force-refresh" href="./clearCache.php">强制刷新</a>
+    <a id="force-refresh" href="./clearCache.php">刷新缓存</a>
     <textarea id="headers" placeholder="自定义 headers, 一行一个属性" rows="3"></textarea>
     <ul id="accordion" class="accordion">
     <?php
