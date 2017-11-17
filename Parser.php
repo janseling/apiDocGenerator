@@ -10,7 +10,6 @@ class Parser {
                 continue;
             }
             $doc[] = [
-                'return' => $this->getReturn($comment),
                 'params' => $this->getParams($comment),
                 'columns' => $this->getColumns($comment),
                 'url' => $this->getField($comment, 'url'),
@@ -36,12 +35,6 @@ class Parser {
     public function getFields ($str, $field) {
         $matches = [];
         preg_match_all("/\*\ \@{$field}\ *(.*)/", $str, $matches);
-        return $matches[1];
-    }
-
-    public function getReturn ($str) {
-        $matches = [];
-        preg_match("/\*\ \@return\ *({.*})/", str_replace("\n", " ", $str), $matches);
         return $matches[1];
     }
 
