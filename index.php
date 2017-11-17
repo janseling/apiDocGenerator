@@ -16,6 +16,7 @@ $parser = new Parser();
 </head>
 
 <body>
+    <textarea id="headers" placeholder="自定义 headers, 一行一个属性" rows="3"></textarea>
     <ul id="accordion" class="accordion">
     <?php
     foreach ($config['php_files'] as $file) {

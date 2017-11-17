@@ -30,18 +30,27 @@ $(function() {
 
     $('.btn-test').on('click', function () {
         var $this = $(this),
+            headers = $('textarea#headers').val(),
             options = {dataType: 'json', data: {}};
         $this.parent().parent().find('.params input').each(function (index, obj) {
             if ($(obj).val().length > 0) {
                 options.data[$(obj).attr('name')] = $(obj).val();
             }
         });
+        if (headers) {
+            options.headers = {};
+            $.each(headers.split("\n"), function (index, item) {
+                var header = item.split(':');
+                options.headers[header[0]] = header[1] || '';
+            });
+        }
         options.url = $this.data('url').trim();
-        options.method = $this.data('method').trim().toUpperCase(),
+        options.method = $this.data('method').trim().toUpperCase();
         options.complete = function (XHR, status) {
             $this.parent().parent().find('.api-return').show();
             $this.parent().parent().find('.api-return .result').html(status == 'success' ? XHR.responseText : XHR.statusText);
         };
+        console.log('ajax options:', options);
         $.ajax(options);
     });
 
