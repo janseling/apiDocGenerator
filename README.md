@@ -31,14 +31,14 @@
  * @url     api/text1
  * @method  POST
  * @desc    这是用来测试接口1的接口，会直接输出无意义的数据
- * @param   param1      string  [必填]  param1 的说明描述
- * @param   param2      string  [必填]  param2 的说明描述
- * @param   param3      string  [可选]  param3 的说明描述
- * @param   param4      string  [可选]  param4 的说明描述
- * @column  field1      返回结果中 field1 的说明描述
- * @column  field2      返回结果中 field2 的说明描述
- * @column  field3      返回结果中 field3 的说明描述
- * @column  field4      返回结果中 field4 的说明描述
+ * @param   param1      string  [必填]  param1的说明描述
+ * @param   param2      string  [必填]  param2的说明描述
+ * @param   param3      string  [可选]  param3的说明描述
+ * @param   param4      string  [可选]  param4的说明描述
+ * @column  field1      返回结果中field1的说明描述
+ * @column  field2      返回结果中field2的说明描述
+ * @column  field3      返回结果中field3的说明描述
+ * @column  field4      返回结果中field4的说明描述
  */
 ```
 
