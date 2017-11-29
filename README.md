@@ -42,6 +42,6 @@
  */
 ```
 
-## License
+## 许可证
 
 [MIT](https://opensource.org/licenses/MIT)
