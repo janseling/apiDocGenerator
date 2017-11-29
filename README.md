@@ -41,3 +41,7 @@
  * @column  field4      slkdjskdjls
  */
 ```
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
