@@ -46,9 +46,9 @@
  */
 ```
 
-## 许可证
+## 版权声明
 
-apiDocGenerator 遵循 [MIT License](https://opensource.org/licenses/MIT)
+本项目使用 [MIT](https://opensource.org/licenses/MIT) 许可证
 
 ```
 Copyright (c) 2017 Max<janseling@gmail.com>
