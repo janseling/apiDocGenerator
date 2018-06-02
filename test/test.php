@@ -32,8 +32,8 @@ function genStr ($isName = false) {
     $num = rand(1, $isName ? 16 : 64);
     $str = '';
     for ($i = 0; $i < $num; $i++) {
-        $index = rand(0, strlen($src) - 1);
-        $str .= $src[$index];
+        $chr = rand(1, 100) > 70 || $isName ? $src[rand(0, strlen($src) - 1)] : iconv('GB2312', 'UTF-8', chr(mt_rand(0xB0,0xD0)).chr(mt_rand(0xA1, 0xF0)));
+        $str .= $chr;
     }
     return $str;
 }
