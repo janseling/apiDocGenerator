@@ -48,10 +48,15 @@ $(function() {
         options.method = $this.data('method').trim().toUpperCase();
         options.complete = function (XHR, status) {
             $this.parent().parent().find('.api-return').show();
-            $this.parent().parent().find('.api-return .result').html(status == 'success' ? XHR.responseText : XHR.statusText);
+            var options = {
+              collapsed: true,
+              withQuotes:true
+            };
+            var str =eval('(' + XHR.responseText + ')');
+            $this.parent().parent().find('.api-return .result').jsonViewer(str,options);
+            //$this.parent().parent().find('.api-return .result').html(status == 'success' ?formatJson(XHR.responseText) : '接口出错,赶紧联系后端大佬!');
         };
         console.log('ajax options:', options);
         $.ajax(options);
     });
-
 });
