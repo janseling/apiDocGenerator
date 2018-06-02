@@ -1,6 +1,6 @@
 <?php
 return [
     'php_files' => [
-        'add your api php files path here',
+        'test/test.php',
     ],
 ];
