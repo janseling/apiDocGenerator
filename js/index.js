@@ -50,7 +50,6 @@ $(function() {
             $this.parent().parent().find('.api-return').show();
             var options = {
               collapsed: true,
-              withQuotes:true
             };
             var str =eval('(' + XHR.responseText + ')');
             $this.parent().parent().find('.api-return .result').jsonViewer(str,options);
