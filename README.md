@@ -20,6 +20,7 @@
 |--------|--------|--------|----|
 |@api|是|接口标识, 没有此标识的注释无法解析为接口文档||
 |@name|是|接口的名称|@name 测试接口1|
+|@category|是|接口所属分类|@category 用户模块|
 |@desc|是|接口的功能简短描述|@desc 这是一段描述|
 |@url|是|接口的地址|@url api/text|
 |@method|是|接口的请求方式|@method POST|
@@ -32,6 +33,7 @@
 /**
  * @api
  * @name    测试接口1
+ * @category  用户模块
  * @url     api/text1
  * @method  POST
  * @desc    这是用来测试接口1的接口，会直接输出无意义的数据
