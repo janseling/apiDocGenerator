@@ -23,6 +23,7 @@ class Parser {
                 'columns' => $this->getColumns($comment),
                 'url' => $this->getField($comment, 'url'),
                 'name' => $this->getField($comment, 'name'),
+                'category' => $this->getField($comment, 'category'),
                 'desc' => $this->getField($comment, 'desc'),
                 'method' => $this->getField($comment, 'method'),
             ];
